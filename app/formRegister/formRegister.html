@@ -1,0 +1,61 @@
+<div ng-controller="formRegister"> 
+<div id="register" class="text-center" style="padding:50px 0; text-align:center">
+	<div class="logo">register</div>
+	<!-- Main Form -->
+	<div class="login-form-1">
+		<form id="register-form" class="text-left">
+			<div class="login-form-main-message"></div>
+			<div class="main-login-form">
+				<div class="login-group">
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="reg.userName"  placeholder="username" required>
+						
+					</div>
+
+					<div class="form-group">
+						<input type="password" class="form-control" ng-model="reg.password" placeholder="password" required>
+					</div>
+					
+					
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="reg.fName" placeholder="first name" required>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="reg.lName" placeholder="last name" required>
+					</div>
+					<div class="form-group">
+					<span class="form-control">DOB</span>
+						<input type="date" class="form-control" ng-model="reg.dob" placeholder="date of birth" required>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="reg.contact" placeholder="contact number" required>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="reg.address" placeholder="address" required>
+					</div>
+					<div class="form-group">
+					<span class="form-control">Location</span>
+						<select class="form-control" ng-model="reg.location">
+							<option ng-repeat="x in locations" value="{{x.lId}}">{{x.lName}}</option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+					<span class="form-control">Gender</span>
+						<select class="form-control" ng-model="reg.gender">
+						  <option value="M">Male</option>
+						  <option value="F">Female</option>
+						</select>
+					</div>
+					
+					
+				</div>
+				<button ng-click='register()' class="login-button"><i class="fa fa-chevron-right"></i></button>
+			</div>
+			<div class="etc-login-form">
+				<p>already have an account? <a ui-sref="formLogin">login here</a></p>
+			</div>
+		</form>
+	</div>
+	<!-- end:Main Form -->
+</div>

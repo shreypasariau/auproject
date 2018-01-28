@@ -1,0 +1,121 @@
+<div class="container" ng-controller="addLocation">
+<table width='100%' border>
+	  <tr>
+		  <td align='center'><a ui-sref="reviewRequest" class='review_table'>Review Request</a></td>
+		  <td align='center' ng-if='userType==ADMIN' class='review_table'><a ui-sref="addRoom">Add room</a></td>
+		  <td  style='background:#aaaaaa' align='center' class='review_table'><a ui-sref="addLocation"><b><font color='black'>Add Location</font></b></a></td>
+		  <td align='center' class='review_table'><a ui-sref="bookRoom">Book Room</a></td>
+		  <td align='center' class='review_table'><a ui-sref="userMaster">User Master</a></td>
+		  <td align='center' class='review_table'><a ui-sref="editProfile">Edit Profile</a></td>
+	  </tr>
+  </table>
+	<div class="row">
+        
+        <!-- panel preview -->
+        <div class="col-sm-6">
+            <h3 align='center'>Add Location</h3>
+            <div class="panel panel-default">
+                <div class="panel-body form-horizontal payment-form">
+                    <div class="form-group">
+                        <label for="locationName" class="col-sm-3 control-label">Location Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" ng-model="addloc.locationName">
+                        </div>
+                    </div>
+                   
+                    
+					<div class="form-group">
+						<label for="userName" class="col-sm-3 control-label">UserName</label>
+						<div class="col-sm-9">
+						<input type="text" class="form-control" ng-model="addloc.userName"  placeholder="email" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="password" class="col-sm-3 control-label">Password</label>
+						<div class="col-sm-9">
+						
+						<input type="password" class="form-control" ng-model="addloc.password" placeholder="password" required>
+						</div>
+					</div>
+					
+					
+					<div class="form-group">
+						<label for="firstName" class="col-sm-3 control-label">First Name</label>
+						<div class="col-sm-9">
+						
+						<input type="text" class="form-control" ng-model="addloc.fName" placeholder="first name" required>
+						</div>
+					</div>
+					<div class="form-group">
+					<label for="lastName" class="col-sm-3 control-label">LastName</label>
+						<div class="col-sm-9">
+						<input type="text" class="form-control" ng-model="addloc.lName" placeholder="last name" required>
+						</div>
+					</div>
+					<div class="form-group">
+					<label for="dob" class="col-sm-3 control-label">DOB</label>
+						<div class="col-sm-9">
+						<input type="date" class="form-control" ng-model="addloc.dob" placeholder="date of birth" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="contactNo" class="col-sm-3 control-label">Contact No</label>
+						<div class="col-sm-9">
+						<input type="text" class="form-control" ng-model="addloc.contact" placeholder="contact number" required>
+						</div>
+					</div>
+					<div class="form-group">
+					<label for="address" class="col-sm-3 control-label">Address</label>
+						<div class="col-sm-9">
+						
+						<input type="text" class="form-control" ng-model="addloc.address" placeholder="address" required>
+						</div>
+					</div>
+					
+					
+					<div class="form-group">
+					<label for="gender" class="col-sm-3 control-label">Gender</label>
+						<div class="col-sm-9">
+						<select class="form-control" ng-model="addloc.gender">
+						  <option value="Male">Male</option>
+						  <option value="Female">Female</option>
+						</select>
+						</div>
+					</div>
+					<div class="form-group">
+                        <div class="col-sm-12 text-right">
+                            <button ng-click="addLocation()" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-plus"></span> Add
+                            </button>
+                        </div>
+                    </div>
+					
+					
+				</div>
+			</div>
+		</div>	
+		
+		<div class="col-sm-6">
+		<h3 align='center'>List of Locations</h3>
+		<table class="table table-striped">
+    <thead>
+      <tr>
+        <th >Location Name</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+	
+      <tr ng-repeat="x in locations">
+		<td >{{ x.lName }}</td>
+		
+	  </tr>
+      
+    </tbody>
+  </table>
+		</div>
+		
+        
+	</div>
+</div>

@@ -1,0 +1,55 @@
+
+<div ng-controller="reviewRequest" class="container">
+
+ <table width='100%' border>
+	  <tr>
+		  <td style='background:#aaaaaa' align='center' class='review_table'><a ui-sref="reviewRequest"><b><font color='black'>Review Request</font></b></a></td>
+		  <td align='center' ng-if="userType=='ADMIN'" class='review_table'><a ui-sref="addRoom">Add room</a></td>
+		  <td align='center' ng-if="userType=='ADMIN'" class='review_table'><a ui-sref="addLocation">Add Location</a></td>
+		  <td align='center'><a ui-sref="bookRoom" class='review_table'>Book Room</a></td>
+		  <td align='center' ng-if="userType=='ADMIN'" class='review_table'><a ui-sref="userMaster">User Master</a></td>
+		  <td align='center'><a ui-sref="editProfile" class='review_table'>Edit Profile</a></td>
+		  
+	  </tr>
+  </table>
+
+
+<h3 align='center'>Review Requests</h3>
+  <table class="table table-striped">
+     <thead>
+      <tr>
+        <th style="padding: 10px 30px">UserName</th>
+        <th style="padding: 10px 30px">Date</th>
+        <th style="padding: 10px 30px">Start Time</th>
+		<th style="padding: 10px 30px">End Time</th>
+        <th style="padding: 10px 30px">Room Name</th>
+        <th style="padding: 10px 30px">Purpose</th>
+		<th style="padding: 10px 30px">Status</th>
+        <th ng-if="userType=='ADMIN'" style="padding: 10px 30px">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in userRequests">
+  <td style="padding: 10px 30px">{{ x.userId }}</td>
+  <td style="padding: 10px 30px">{{ x.dateOfBooking  | date:'yyyy-MM-dd ' }}</td>
+  <td style="padding: 10px 30px">{{ x.startTime | date:'HH:mm:ss ' }}</td>
+  <td style="padding: 10px 30px">{{ x.endTime | date:'HH:mm:ss ' }}</td>
+  <td style="padding: 10px 30px">{{ x.rId }}</td>
+  <td style="padding: 10px 30px">{{ x.purposeOfBooking }}</td>
+  <td style="padding: 10px 30px">{{ x.status }}</td>
+  <td ng-if="userType=='ADMIN'" ><button class='button' ng-if="x.status=='PENDING'||x.status=='REJECTED'" ng-click="accept(x.requestId)">Accept</button><button class='button' ng-if="x.status=='PENDING'||x.status=='ACCEPTED'" ng-click="reject(x.requestId)">Reject</button></td>
+   </tr>
+    </tbody>
+  </table>
+</div>
+<!-- <script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("customers.php")
+    .then(function (response) {$scope.names = response.data.records;});
+});
+</script> -->
+</body>
+</html>
+
+

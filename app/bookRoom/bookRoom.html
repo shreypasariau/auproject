@@ -1,0 +1,72 @@
+
+
+<div ng-controller="bookRoom" class="container">
+<table width='100%' border>
+	  <tr>
+		  <td align='center' class='review_table'><a ui-sref="reviewRequest">Review Request</a></td>
+		  <td align='center' class='review_table' ng-if="userType=='ADMIN'"><a ui-sref="addRoom">Add room</a></td>
+		  <td align='center' class='review_table' ng-if="userType=='ADMIN'"><a ui-sref="addLocation">Add Location</a></td>
+		  <td style='background:#aaaaaa' align='center' class='review_table' ><a ui-sref="bookRoom"><b><font color='black'>Book Room</font></b></a></td>
+		  <td align='center' class='review_table' ng-if="userType=='ADMIN'"><a ui-sref="userMaster">User Master</a></td>
+		  <td align='center' class='review_table'><a ui-sref="editProfile">Edit Profile</a></td>
+	  </tr>
+  </table>
+	<div class="row">
+        
+        <!-- panel preview -->
+        <div class="col-sm-5">
+            <h3 align='center'>Book BoardRoom</h3>
+            <div class="panel panel-default">
+                <div class="panel-body form-horizontal payment-form">
+                    
+                    
+                    <div class="form-group">
+                        <label for="roomName" class="col-sm-3 control-label">Room Name</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" ng-model="bookroom.rId">
+							<option ng-repeat="x in rooms" value="{{x.rId}}">{{x.rName}}</option>
+							</select>
+                        </div>
+                    </div> 
+					
+					<div class="form-group">
+					<label for="date" class="col-sm-3 control-label">Date</label>
+						<div class="col-sm-9">
+						<input type="date" class="form-control" ng-model="bookroom.dateOfBooking" placeholder="date" required>
+						</div>
+					</div>
+					
+					<div class="form-group">
+					<label for="startTime" class="col-sm-3 control-label">Start Time</label>
+						<div class="col-sm-9">
+						<input type="time" class="form-control" ng-model="bookroom.startTime" placeholder="start time" required>
+						</div>
+					</div>
+					
+					<div class="form-group">
+					<label for="endTime" class="col-sm-3 control-label">End Time</label>
+						<div class="col-sm-9">
+						<input type="time" class="form-control" ng-model="bookroom.endTime" placeholder="end time" required>
+						</div>
+					</div>
+					
+					<div class="form-group">
+                        <label for="reason" class="col-sm-3 control-label">Reason</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" ng-model="bookroom.purposeOfBooking">
+                        </div>
+                    </div>
+                     
+                    <div class="form-group">
+                        <div class="col-sm-12 text-right">
+                            <button type="button" ng-click="bookRoom()" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-plus"></span> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div> <!-- / panel preview -->
+        
+	</div>
+</div>

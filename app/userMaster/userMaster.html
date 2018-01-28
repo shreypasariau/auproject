@@ -1,0 +1,49 @@
+
+
+<div ng-controller="userMaster" class="container">
+<table width='100%' border>
+	  <tr>
+		  <td align='center' class='review_table'><a ui-sref="reviewRequest">Review Request</a></td>
+		  <td align='center' class='review_table'><a ui-sref="addRoom">Add room</a></td>
+		  <td align='center' class='review_table'><a ui-sref="addLocation">Add Location</a></td>
+		  <td align='center' class='review_table'><a ui-sref="bookRoom">Book Room</a></td>
+		  <td style='background:#aaaaaa' align='center' class='review_table'><a ui-sref="userMaster"><b><font color='black'>User Master</font></b></a></td>
+		  <td align='center' class='review_table'><a ui-sref="editProfile">Edit Profile</a></td>
+		  
+		  
+	  </tr>
+  </table>
+
+<h3 align='center'>User Master</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+		 <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in userList">
+		<td>{{ x.fName }}</td>
+		<td>{{ x.lName }}</td>
+		<td>{{ x.userName }}</td>
+		<td ><button class='button' ng-click="makeAdmin(x.userId)">Make Admin</button></td>
+  
+	  </tr>
+      
+    </tbody>
+  </table>
+</div>
+<!-- <script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("customers.php")
+    .then(function (response) {$scope.names = response.data.records;});
+});
+</script> -->
+</body>
+</html>
+
+

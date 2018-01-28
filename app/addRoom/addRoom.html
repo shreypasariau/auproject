@@ -1,0 +1,58 @@
+<div ng-controller="addRoom" class="container">
+<table width='100%' border>
+	  <tr>
+		  <td align='center' class='review_table'><a ui-sref="reviewRequest">Review Request</a></td>
+		  <td style='background:#aaaaaa' align='center' class='review_table'><a ui-sref="addRoom"><b><font color='black'>Add room</font></b></a></td>
+		  <td align='center' class='review_table'><a ui-sref="addLocation">Add Location</a></td>
+		  <td align='center' class='review_table'><a ui-sref="bookRoom">Book Room</a></td>
+		  <td align='center' class='review_table'><a ui-sref="userMaster">User Master</a></td>
+		  <td align='center' class='review_table'><a ui-sref="editProfile">Edit Profile</a></td>
+	  </tr>
+  </table>
+	<div class="row">
+        
+        <!-- panel preview -->
+        <div class="col-sm-5">
+            <h3 align='center'>Add Room</h3>
+            <div class="panel panel-default">
+                <div class="panel-body form-horizontal payment-form">
+                    <div class="form-group">
+                        <label for="concept" class="col-sm-3 control-label">Room Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" ng-model="addroom.rName">
+                        </div>
+                    </div>
+                    
+                     
+                    <div class="form-group">
+                        <div class="col-sm-12 text-right">
+                            <button type="button" ng-click="addRoom()" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-plus"></span> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div> <!-- / panel preview -->
+		<div class='col-sm-7'>
+		<h3 align='center'>List of BoardRoom</h3>
+		<table class="table table-striped">
+    <thead>
+      <tr>
+        <th >Room Name</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+	
+      <tr ng-repeat="x in rooms">
+		<td >{{ x.rName }}</td>
+		
+	  </tr>
+      
+    </tbody>
+  </table>
+  </div>
+        
+	</div>
+</div>

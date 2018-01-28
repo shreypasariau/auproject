@@ -1,0 +1,99 @@
+<div ng-controller="editProfile" class="container">
+<table width='100%' border>
+	  <tr>
+		  <td align='center' class='review_table'><a ui-sref="reviewRequest">Review Request</a></td>
+		  <td align='center' class='review_table' ng-if="userType=='ADMIN'"><a ui-sref="addRoom">Add room</a></td>
+		  <td align='center' class='review_table' ng-if="userType=='ADMIN'"><a ui-sref="addLocation">Add Location</a></td>
+		  <td align='center' class='review_table'><a ui-sref="bookRoom">Book Room</a></td>
+		  <td align='center' class='review_table' ng-if="userType=='ADMIN'"><a ui-sref="userMaster">User Master</a></td>
+		  <td style='background:#aaaaaa' align='center' class='review_table'><a ui-sref="editProfile"><b><font color='black'>Edit Profile</font></b></a></td>
+		  
+		  
+	  </tr>
+  </table>
+	<div class="row">
+        
+        <!-- panel preview -->
+        <div class="col-sm-5">
+            <h3 align='center'>Update Profile</h3>
+            <div class="panel panel-default">
+                <div class="panel-body form-horizontal payment-form">
+                    
+                  
+                    
+					<div class="form-group">
+						<label for="userName" class="col-sm-3 control-label">UserName</label>
+						<div class="col-sm-9">
+						<input disabled type="text" class="form-control" ng-model="reg.userName"  placeholder="email" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="password" class="col-sm-3 control-label">Password</label>
+						<div class="col-sm-9">
+						
+						<input type="password" class="form-control" ng-model="reg.password" placeholder="password" required>
+						</div>
+					</div>
+					
+					
+					<div class="form-group">
+						<label for="firstName" class="col-sm-3 control-label">First Name</label>
+						<div class="col-sm-9">
+						
+						<input type="text" class="form-control" ng-model="reg.fName" placeholder="first name" required>
+						</div>
+					</div>
+					<div class="form-group">
+					<label for="lastName" class="col-sm-3 control-label">LastName</label>
+						<div class="col-sm-9">
+						<input type="text" class="form-control" ng-model="reg.lName" placeholder="last name" required>
+						</div>
+					</div>
+					<div class="form-group">
+					<label for="dob" class="col-sm-3 control-label">DOB</label>
+						<div class="col-sm-9">
+						<input type="date" class="form-control" ng-model="reg.dob" placeholder="date of birth" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="contactNo" class="col-sm-3 control-label">Contact No</label>
+						<div class="col-sm-9">
+						<input type="text" class="form-control" ng-model="reg.contact" placeholder="contact number" required>
+						</div>
+					</div>
+					<div class="form-group">
+					<label for="address" class="col-sm-3 control-label">Address</label>
+						<div class="col-sm-9">
+						
+						<input type="text" class="form-control" ng-model="reg.address" placeholder="address" required>
+						</div>
+					</div>
+					
+					
+			
+					<div class="form-group">
+					<label for="gender" class="col-sm-3 control-label">Gender</label>
+						<div class="col-sm-9">
+						<select class="form-control" ng-model="reg.gender">
+						  <option value="M">Male</option>
+						  <option value="F">Female</option>
+						</select>
+						</div>
+					</div>
+					<div class="form-group">
+                        <div class="col-sm-12 text-right">
+                            <button ng-click='update()' class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-plus"></span> Update
+                            </button>
+                        </div>
+                    </div>
+					
+					
+				</div>
+			</div>
+		</div>	
+		
+        
+	</div>
+</div>
